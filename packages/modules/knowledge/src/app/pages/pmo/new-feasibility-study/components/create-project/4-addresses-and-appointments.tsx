@@ -1,0 +1,251 @@
+import { FC, useState } from "react";
+import { useIntl } from "react-intl";
+import { Link } from "react-router-dom";
+import { ClosePopup } from "../../../../partials/ClosePopup";
+import { AddPopup } from "../../../../partials/AddPopup";
+import { RightToolbar } from "../../../partials/RightToolbar";
+import { NewFeasibilityStudySidebar } from "./sidebar/new-feasibility-study-sidebar";
+import {
+  NewFeasibilityStudyToolbar,
+  NewFeasibilityStudyToolbarLinkType,
+} from "../../toolbar/NewFeasibilityStudyToolbar";
+
+export const AddressesAndAppointments: FC = () => {
+  const [modalShow, setModalShow] = useState<boolean>(false);
+
+  const intl = useIntl();
+  const [getIsDone, setIsDone] = useState<Boolean>(false);
+
+  const handelIsDone = () => {
+    setIsDone(true);
+    setModalShow(true);
+  };
+
+  return (
+    <>
+      <NewFeasibilityStudyToolbar
+        isNewFeasibilityStudy={false}
+        type={NewFeasibilityStudyToolbarLinkType.ProjectBrochure}
+        title="AddressesAndAppointments"
+      />
+      <RightToolbar />
+      <div
+        id="kt_content_container"
+        className="d-flex flex-column-fluid align-items-start container-xxl p-0"
+      >
+        <div className="content flex-row-fluid" id="kt_content">
+          <div className="d-flex flex-column flex-lg-row">
+            <NewFeasibilityStudySidebar card_number={"4"} page_size={410} />
+            <div className="w-100 w-lg-850px w-sm-100 me-lg-5">
+              <div className="card card-xl-stretch mb-xl-0">
+                <div className="card-header border-1 pt-3 pb-2">
+                  <h3 className="card-title align-items-start flex-column">
+                    <h2 className="text-dark mb-2 fs-3 mt-3">
+                      {intl.formatMessage({ id: "AddressesAndAppointments" })}
+                    </h2>
+                    <span className="text-muted fs-7">
+                      {intl.formatMessage({ id: "ProjectDetailData" })}
+                    </span>
+                  </h3>
+                </div>
+                <div className="card-body py-3 px-3 mx-8">
+                  <div className="tab-content">
+                    <div
+                      className="tab-pane fade active show"
+                      id="REGA_table_widget_5_tab_1"
+                    >
+                      <form noValidate className="form outputForm">
+                        <div className="row">
+                          <div className="col-lg-6 mb-2 pt-2 pb-3">
+                            <label
+                              htmlFor="outputName"
+                              className="form-label px-2 fontSz-6"
+                            >
+                              {intl.formatMessage({
+                                id: "DeliveryAddressForSamplesToTheSupplier",
+                              })}
+                            </label>
+                            <div className="input-group">
+                              <div className="input-group-prepend">
+                                <span className="input-group-text">
+                                  <i className="special fas fa-map-marker-alt"></i>
+                                </span>
+                              </div>
+                              <input
+                                id="outputName"
+                                type="text"
+                                className="form-control"
+                                placeholder={intl.formatMessage({
+                                  id: "DeliveryAddressForSamplesToTheSupplier",
+                                })}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-lg-6 mb-2 pt-2 pb-3">
+                            <label
+                              htmlFor="outputName"
+                              className="form-label px-2 fontSz-6"
+                            >
+                              {intl.formatMessage({ id: "Building" })}
+                            </label>
+                            <div className="input-group">
+                              <div className="input-group-prepend">
+                                <span className="input-group-text">
+                                  <i className="special fas fa-building"></i>
+                                </span>
+                              </div>
+                              <input
+                                id="outputName"
+                                type="text"
+                                className="form-control"
+                                placeholder={intl.formatMessage({
+                                  id: "Building",
+                                })}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-lg-6 mb-2 pt-2 pb-3">
+                            <label
+                              htmlFor="outputName"
+                              className="form-label px-2 fontSz-6"
+                            >
+                              {intl.formatMessage({ id: "Floor" })}
+                            </label>
+                            <div className="input-group">
+                              <div className="input-group-prepend">
+                                <span className="input-group-text">
+                                  <i className="special bi bi-layers-fill"></i>
+                                </span>
+                              </div>
+                              <input
+                                id="outputName"
+                                type="text"
+                                className="form-control"
+                                placeholder={intl.formatMessage({
+                                  id: "Floor",
+                                })}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-lg-6 mb-2 pt-2 pb-3">
+                            <label
+                              htmlFor="outputName"
+                              className="form-label px-2 fontSz-6"
+                            >
+                              {intl.formatMessage({ id: "RoomDepartmentName" })}
+                            </label>
+                            <div className="input-group">
+                              <div className="input-group-prepend">
+                                <span className="input-group-text">
+                                  <i className="special fab fa-buromobelexperte"></i>
+                                </span>
+                              </div>
+                              <input
+                                id="outputName"
+                                type="text"
+                                className="form-control"
+                                placeholder={intl.formatMessage({
+                                  id: "RoomDepartmentName",
+                                })}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-lg-6 mb-2 pt-2 pb-3">
+                            <label
+                              htmlFor="outputDate"
+                              className="form-label px-2  fontSz-6"
+                            >
+                              {intl.formatMessage({ id: "DeliveryDate" })}
+                            </label>
+                            <input
+                              id="outputDate"
+                              type="date"
+                              className="form-control form-control-lg form-control-solid mb-3 mb-lg-2"
+                              placeholder={intl.formatMessage({
+                                id: "DeliveryDate",
+                              })}
+                            />
+                          </div>
+                          <div className="col-lg-6 mb-2 pt-2 pb-3">
+                            <label
+                              htmlFor="outputStatus"
+                              className="form-label px-2  fontSz-6"
+                            >
+                              {intl.formatMessage({ id: "DeliveryTime" })}
+                            </label>
+                            <select
+                              id="outputStatus"
+                              className="form-select myform-control inputHeight form-select-solid select2-hidden-accessible mt-1"
+                              data-kt-select2="true"
+                              data-placeholder={intl.formatMessage({
+                                id: "DeliveryTime",
+                              })}
+                              data-dropdown-parent="#kt_menu_62775e8642438"
+                              data-allow-clear="true"
+                              data-select2-id="select2-data-4-vqtd"
+                              tabIndex={-1}
+                              aria-hidden="true"
+                            >
+                              <option disabled selected>
+                                {intl.formatMessage({ id: "DeliveryTime" })}
+                              </option>
+                              <option value="1">
+                                {intl.formatMessage({ id: "BIG" })}
+                              </option>
+                              <option value="2">
+                                {intl.formatMessage({ id: "MEDIUM" })}
+                              </option>
+                              <option value="3">
+                                {intl.formatMessage({ id: "LOW" })}
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="col-12 col-lg-12 mx-auto mb-10">
+                          <div className=" card-diff-toolbar w-100 mt-3 d-flex justify-content-center">
+                            <div className="d-flex justify-content-center align-items-center w-50">
+                              <div
+                                onClick={() => handelIsDone()}
+                                className="btn btn-success mx-1 text-center w-100"
+                                // data-bs-toggle="modal"
+                                // data-bs-target="#Rega_modal_add"
+                              >
+                                {intl.formatMessage({ id: "Save" })}
+                              </div>
+                              <Link
+                                to={
+                                  "/pmo-new-feasibility-study/project-details"
+                                }
+                                className="btn btn-secondary mx-1 text-center w-100" /* data-bs-toggle="modal" data-bs-target="#Rega_modal_Delete" */
+                              >
+                                {intl.formatMessage({ id: "ThePrevious" })}
+                              </Link>
+                              <Link
+                                to={
+                                  "/pmo-new-feasibility-study/classification-field"
+                                }
+                                className="btn btn-primary mx-1 text-center w-100"
+                              >
+                                {intl.formatMessage({ id: "Next" })}
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="modal fade" id="Rega_modal_close" aria-hidden="true">
+        <ClosePopup />
+      </div> */}
+      <div className="modal fade" id="Rega_modal_add" aria-hidden="true">
+        <AddPopup show={modalShow} handleClose={() => setModalShow(false)} />
+      </div>
+    </>
+  );
+};

@@ -1,0 +1,26 @@
+ <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                >
+                  <circle opacity="0.8" cx="32" cy="32" r="32" fill="white" />
+                  <path
+                    d="M45 32L25.5 43.2583L25.5 20.7417L45 32Z"
+                    fill="url(#paint0_linear_302_3028)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_302_3028"
+                      x1="32"
+                      y1="19.7719"
+                      x2="32"
+                      y2="44.1062"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#77BF43" />
+                      <stop offset="1" stop-color="currentColor" />
+                    </linearGradient>
+                  </defs>
+                </svg>
